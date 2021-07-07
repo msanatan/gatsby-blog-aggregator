@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Container, Row, Col, Nav, Card, Button } from 'react-bootstrap'
 import { graphql } from 'gatsby'
-import { pageTitle, cardTitle, cardBody, card, cardButton } from './index.module.css'
+import { pageTitle, cardTitle, cardBody, card, cardButton, cardDate } from './index.module.css'
 
 const IndexPage = ({ data }) => {
   console.log(data)
@@ -17,6 +17,7 @@ const IndexPage = ({ data }) => {
           <Card style={{ width: '18rem' }} className={`my-3 ${card}`}>
             <Card.Body className='d-flex flex-column'>
               <Card.Title className={cardTitle}>{post.title}</Card.Title>
+              <Card.Text className={`${cardBody} ${cardDate}`}>Published Date: {post.PublishDate}</Card.Text>
               <Card.Text className={cardBody}>{post.description}</Card.Text>
               <Button variant='primary' as='a' href={post.link} target='_blank' rel='noopener nofollow noreferrer' className={`mt-auto ${cardButton}`}>Read More</Button>
             </Card.Body>
@@ -57,7 +58,7 @@ export const getBlogPostsQuery = graphql`
           description
           link
           title
-          PublishDate
+          PublishDate(formatString: "YYYY-MM-DD")
         }
       }
     }

@@ -32,3 +32,8 @@
   color: white;
   background-color: #FF8400;
 }
+
+.card-date {
+  font-style: italic;
+  text-decoration: underline;
+}
