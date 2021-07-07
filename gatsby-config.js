@@ -38,5 +38,13 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: 'gatsby-source-rest-api',
+      options: {
+        endpoints: [
+          'http://localhost:8080'
+        ],
+      },
+    },
   ],
 };
