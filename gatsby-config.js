@@ -19,6 +19,17 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Londrina Shadow`,
+          `Londrina Solid`,
+          `Raleway`,
+        ],
+        display: 'swap'
+      }
+    },
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
